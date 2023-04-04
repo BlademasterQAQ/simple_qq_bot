@@ -23,10 +23,13 @@ def receive_post_data():
     data = request.get_json()
     # print(data)
     if data['post_type'] == 'message':  # 消息
-        group_id = data['group_id']     # 发送该消息的群号
+        if 'group_id' in data:
+            group_id = data['group_id']     # 发送该消息的群号
+        else:
+            group_id = 0
         user_id = data['user_id']       # 发送该消息的Q号
         message = data['message']       # 该消息的正文
-        print(data)
+        print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), ' ', data)
         if (hit_group_id <= 0 or group_id == hit_group_id) and (hit_user_id <= 0 or user_id == hit_user_id):
             if str(message).startswith('[CQ:at,qq=all]'):   # 命中“@全体成员”
                 global total_send_count
