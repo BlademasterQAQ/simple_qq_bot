@@ -7,7 +7,7 @@ python代码部分参考：[使用go-cqhttp搭建QQ机器人_饭a的博客-CSDN�
 1. `git clone`或者下载解压本仓库源码
 2. 修改`QQ_bot_listener.py`，在`设置区`填写需要命中的Q群群号和Q号，本demo会命中来自设定的群号和Q号的“@全体成员”消息。然后在`reply_message`中填写命中后回复信息的字符串（建议用`""`str类型）
    最后运行`QQ_bot_listener.py`（python缺少依赖请自行pip安装）
-3. 修改`go-cqhttp_windows_amd64\config.yml`配置文件，在`uin: `和`password: `填入你的Q号和密码。
+3. 修改`go-cqhttp_windows_amd64\config.yml`配置文件，在`uin: `和`password: `填入你的Q号和密码（密码填在单引号内）。
    双击`go-cqhttp_windows_amd64\go-cqhttp.bat`运行。
 
 ## 原理
